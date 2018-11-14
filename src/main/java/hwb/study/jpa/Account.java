@@ -28,6 +28,17 @@ public class Account {
     })
     private Address officeAddress;
 
+    @OneToMany(mappedBy = "owner")
+    private Set<Study> studies = new HashSet<>();
+
+
+
+
+
+
+
+
+
     public Set<Study> getStudies() {
         return studies;
     }
@@ -35,10 +46,6 @@ public class Account {
     public void setStudies(Set<Study> studies) {
         this.studies = studies;
     }
-
-    @OneToMany(mappedBy = "owner")
-    private Set<Study> studies = new HashSet<>();
-
 
     public Long getId() {
         return id;
